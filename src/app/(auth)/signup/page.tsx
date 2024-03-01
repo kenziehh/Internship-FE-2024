@@ -14,7 +14,7 @@ export default function SignUp() {
   const { push } = useRouter();
   const { mutateAsync } = useMutation({
     mutationFn: async () => {
-      fetch("/api/signup", {
+      fetch("/api/apps/signup", {
         method: "POST",
         body: JSON.stringify({
           email: formData.email,
