@@ -9,6 +9,7 @@ export async function POST(request: NextRequest) {
   });
 
   if (response.data.token) {
+    console.log(response.data.token);
     return NextResponse.json({ status: 200, token: response.data.token });
   }
 }

@@ -12,7 +12,7 @@ export default function SignUp() {
     password: "",
   });
   const { push } = useRouter();
-  const { mutateAsync, data } = useMutation({
+  const { mutateAsync } = useMutation({
     mutationFn: async () => {
       fetch("/api/signup", {
         method: "POST",
@@ -40,7 +40,6 @@ export default function SignUp() {
   const onSubmit = (e: any) => {
     e.preventDefault();
     mutateAsync();
-    console.log(data);
   };
 
   return (
@@ -77,7 +76,7 @@ export default function SignUp() {
           </button>
         </form>
         <p className="text-center">
-          Didn't Have Account?
+          Didnt Have Account?
           <Link href={"/signin"} className="text-blue-500">
             {` Sign In`}
           </Link>
