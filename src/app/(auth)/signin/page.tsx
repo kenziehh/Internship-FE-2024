@@ -1,9 +1,11 @@
 "use client";
 import Input from "@/components/Input";
 import { UserAuthData } from "@/models/UserAuthData";
-import { postAuth } from "@/services/api/postData";
 import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
 export default function SignIn() {
@@ -13,10 +15,16 @@ export default function SignIn() {
   });
   const { mutateAsync } = useMutation({
     mutationFn: async () => {
-      postAuth("login", formData);
+      fetch("/api/signin", {
+        method: "POST",
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
     },
-    onSuccess:async () => {
-      console.log("berhasil login")
+    onSuccess: async () => {
+      console.log("berhasil login");
     },
   });
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,12 +36,27 @@ export default function SignIn() {
       });
     }
   };
-
-  const onSubmit = () => {
-    mutateAsync();
+  const { push } = useRouter();
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+    try {
+      const response = await signIn("credentials", {
+        redirect: false,
+        email: formData.email,
+        password: formData.password,
+        callbackUrl: "/protected",
+      });
+      if (!response?.error) {
+        push("/protected");
+      } else {
+        console.log(response.error);
+      }
+      mutateAsync();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  console.log(data);
   return (
     <main className="flex min-h-screen justify-center items-center">
       <div className="flex flex-col justify-between items-center gap-12 shadow-xl p-16 rounded-xl">
@@ -53,13 +76,14 @@ export default function SignIn() {
             required
             onChange={handleChange}
           />
+          <button
+            className="py-2 px-3 border-2 mt-4 rounded-md"
+            onClick={onSubmit}
+          >
+            Sign In
+          </button>
         </form>
-        <button
-          className="py-2 px-3 border-2 mt-4 rounded-md"
-          onClick={onSubmit}
-        >
-          Sign In
-        </button>
+
         <p className="text-center">
           Already Have Account?
           <Link href={"/signup"} className="text-blue-500">

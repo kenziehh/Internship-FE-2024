@@ -1,9 +1,9 @@
 "use client";
 import Input from "@/components/Input";
 import { UserAuthData } from "@/models/UserAuthData";
-import { postAuth } from "@/services/api/postData";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
 export default function SignUp() {
@@ -11,12 +11,20 @@ export default function SignUp() {
     email: "",
     password: "",
   });
-  const { mutateAsync } = useMutation({
+  const { push } = useRouter();
+  const { mutateAsync, data } = useMutation({
     mutationFn: async () => {
-      postAuth("lregister", formData);
+      fetch("/api/signup", {
+        method: "POST",
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
     },
     onSuccess: async () => {
       console.log("berhasil signup");
+      push("/signin");
     },
   });
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -29,8 +37,10 @@ export default function SignUp() {
     }
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e: any) => {
+    e.preventDefault();
     mutateAsync();
+    console.log(data);
   };
 
   return (
@@ -59,13 +69,13 @@ export default function SignUp() {
             required
             onChange={handleChange}
           />
+          <button
+            className="py-2 px-3 border-2 mt-4 rounded-md"
+            onClick={onSubmit}
+          >
+            Sign Up
+          </button>
         </form>
-        <button
-          className="py-2 px-3 border-2 mt-4 rounded-md"
-          onClick={onSubmit}
-        >
-          Sign Up
-        </button>
         <p className="text-center">
           Didn't Have Account?
           <Link href={"/signin"} className="text-blue-500">
