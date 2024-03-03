@@ -18,6 +18,14 @@ const config: Config = {
           "2xl": "6rem",
         },
       },
+
+      colors: {
+        purple: "#8732F4",
+        softPurple: "#8732F44D",
+        darker: "#252525",
+        darkPurple: "#141F28",
+        gray: "#D9D9D9",
+      },
     },
   },
   plugins: [],

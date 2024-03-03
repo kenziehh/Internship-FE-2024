@@ -14,7 +14,7 @@ export default function SignIn() {
   });
   const { mutateAsync } = useMutation({
     mutationFn: async () => {
-      fetch("/api/apps/signin", {
+      fetch("/api/signin", {
         method: "POST",
         body: JSON.stringify({
           email: formData.email,
