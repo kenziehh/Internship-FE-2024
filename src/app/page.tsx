@@ -1,8 +1,10 @@
-
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>home</h1>
+    <main className="container">
+      <div className="flex justify-center items-center mt-24">
+        <h1 className="font-bold text-4xl">Mau liburan kemana?</h1>
+
+      </div>
     </main>
   );
 }

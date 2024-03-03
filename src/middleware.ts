@@ -6,4 +6,4 @@ export function mainMiddleware(request: NextRequest) {
   return response;
 }
 
-export default withAuth(mainMiddleware, ["/protected"]);
+export default withAuth(mainMiddleware, ["/transaction", "/profile"]);

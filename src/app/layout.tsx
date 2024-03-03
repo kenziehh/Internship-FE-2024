@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Prompt } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from "./ReactQueryProvider";
 import Navbar from "@/components/Navbar";
 import NextAuthProvider from "./NextAuthProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const prompt = Prompt({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ticketing App",
+  title: "Destinify",
   description: "",
 };
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactQueryProvider>
-        <body className={inter.className}>
+        <body className={prompt.className}>
           <NextAuthProvider>
             <Navbar />
             {children}

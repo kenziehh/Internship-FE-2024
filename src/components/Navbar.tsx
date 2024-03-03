@@ -12,18 +12,16 @@ const Navbar = () => {
   return (
     !disableNavbar.includes(pathName) && (
       <nav className="flex items-center justify-between container p-8">
-        <Link href={"/"}>Logo</Link>
-        <div className="flex gap-4">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/protected"}>Protected</Link>
+        <Link href={"/"} className="text-4xl">Destinify</Link>
+        <div className="flex gap-12">
+          <Link href={"/"}>Beranda</Link>
+          <Link href={"/transaction"}>Transaksi</Link>
+          <Link href={"/profile"}>Profil</Link>
         </div>
         {status === "authenticated" ? (
           <button onClick={() => signOut()}>Sign Out</button>
         ) : (
-          <div className="flex gap-8">
-            <button onClick={() => signIn()}>Sign In</button>
-            <Link href={"/signup"}>Sign Up</Link>
-          </div>
+          <button onClick={() => signIn()}>Sign In</button>
         )}
       </nav>
     )
