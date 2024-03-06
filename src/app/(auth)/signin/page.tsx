@@ -57,7 +57,19 @@ export default function SignIn() {
   };
 
   return (
-    <main className="flex min-h-screen justify-center items-center">
+    <main className="container flex min-h-screen justify-between items-center">
+      <div className="flex flex-col gap-[110px]">
+        <div className="flex flex-col gap-7">
+          <h1 className="text-5xl">
+            Welcome to <span className="font-bold">Destinify!</span>
+          </h1>
+          <p className="max-w-[516px] text-2xl text-gray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod!
+          </p>
+        </div>
+        <img src="https://placekitten.com/g/516/400" alt="" className="" />
+      </div>
       <div className="flex flex-col justify-between items-center gap-12 shadow-xl p-16 rounded-xl">
         <h1 className="text-4xl font-semibold">Sign In</h1>
         <form className="flex flex-col items-center gap-2">
@@ -82,7 +94,6 @@ export default function SignIn() {
             Sign In
           </button>
         </form>
-
         <p className="text-center">
           Already Have Account?
           <Link href={"/signup"} className="text-blue-500">

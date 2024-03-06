@@ -29,7 +29,13 @@ export default function SignUp() {
   });
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    if (name === "email" || name === "password") {
+    if (
+      name === "email" ||
+      name === "password" ||
+      name === "name" ||
+      name === "telp" ||
+      name === "check"
+    ) {
       setFormData({
         ...formData,
         [name]: value,
@@ -43,9 +49,21 @@ export default function SignUp() {
   };
 
   return (
-    <main className="flex min-h-screen justify-center items-center">
-      <div className="flex flex-col items-center gap-8 shadow-xl p-16 rounded-xl">
-        <h1 className="text-4xl font-semibold">Sign Up</h1>
+    <main className="container flex min-h-screen justify-between items-center">
+      <div className="flex flex-col gap-[110px]">
+        <div className="flex flex-col gap-7">
+          <h1 className="text-5xl">
+            Welcome to <span className="font-bold">Destinify!</span>
+          </h1>
+          <p className="max-w-[516px] text-2xl text-gray">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod!
+          </p>
+        </div>
+        <img src="https://placekitten.com/g/516/400" alt="" className="" />
+      </div>
+      <div className="flex flex-col items-center gap-8">
+        <h1 className="text-4xl font-semibold">Daftar</h1>
         <form className="flex flex-col items-center gap-2">
           <Input
             type="email"
@@ -53,6 +71,23 @@ export default function SignUp() {
             label="Email"
             required
             onChange={handleChange}
+            className="max-w-[500px]"
+          />
+          <Input
+            type="text"
+            name="name"
+            label="Nama Lengkap"
+            required
+            onChange={handleChange}
+            className="max-w-[500px]"
+          />
+          <Input
+            type="number"
+            name="telp"
+            label="Nomor Telepon"
+            required
+            onChange={handleChange}
+            className="max-w-[500px]"
           />
           <Input
             type="password"
@@ -60,6 +95,7 @@ export default function SignUp() {
             label="Password"
             required
             onChange={handleChange}
+            className="max-w-[500px]"
           />
           <Input
             type="password"
@@ -67,18 +103,26 @@ export default function SignUp() {
             label="Confirm Password"
             required
             onChange={handleChange}
+            className="max-w-[500px]"
           />
+          <div className="flex items-center">
+            <input type="checkbox" />
+            <p className="text-gray text-sm">
+              By registering. You agree to our
+              <span className="text-black"> Terms & Privacy Policy</span>
+            </p>
+          </div>
           <button
-            className="py-2 px-3 border-2 mt-4 rounded-md"
+            className="py-2 px-3 border-2 mt-4 rounded-md bg-black self-stretch text-white"
             onClick={onSubmit}
           >
-            Sign Up
+            Daftar
           </button>
         </form>
         <p className="text-center">
-          Didnt Have Account?
+          Sudah Punya Akun?
           <Link href={"/signin"} className="text-blue-500">
-            {` Sign In`}
+            {` Masuk`}
           </Link>
         </p>
       </div>
