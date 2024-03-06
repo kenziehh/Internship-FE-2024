@@ -57,7 +57,84 @@ export default function SignIn() {
   };
 
   return (
-    <main className="container flex min-h-screen justify-between items-center">
+    <main className="container h-screen">
+      <div className="flex flex-col">
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-0 justify-between mt-[115px]">
+          <div className="flex flex-col gap-[120px]">
+            <div className="flex flex-col gap-7">
+              <h1 className="text-white text-center md:text-start">
+                Selamat datang di <span className="bold">Destinify</span>!
+              </h1>
+              <p className="text-neutral max-w-[510px] text-2xl text-center md:text-start">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod!
+              </p>
+            </div>
+            <img src="/baseimg.jpg" alt="" className="w-full h-full" />
+          </div>
+          <div className="flex flex-col items-stretch gap-16 shadow-xl rounded-xl ">
+            <div className="flex flex-col gap-5 text-center items-center px-8">
+              <h1 className="text-4xl font-semibold text-white">Masuk</h1>
+              <h3 className="text-2xl text-neutral">
+                Silahkan masuk terlebih dahulu
+              </h3>
+            </div>
+            <form className="flex flex-col items-stretch gap-5">
+              <div className="">
+                <p className="l2 text-neutral">Email</p>
+                <Input
+                  type="email"
+                  name="email"
+                  label="email"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <p className="l2 text-neutral">Password</p>
+                <Input
+                  type="password"
+                  name="password"
+                  label="password"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <Link
+                href={"/reset"}
+                className="underline text-neutral self-end l2"
+              >
+                Lupa kata sandi?
+              </Link>
+              <button
+                className="p-3 bg-purple text-white rounded-[40px]"
+                onClick={onSubmit}
+              >
+                Masuk
+              </button>
+            </form>
+            <div className="flex flex-col gap-8 -mt-8">
+              <p className="text-neutral separatorBetween">or</p>
+
+              {/* <div>google</div> */}
+              <p className="text-center text-white">
+                Belum punya akun?
+                <Link href={"/signup"} className="medium">
+                  {` Daftar`}
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="halfRadialGradient absolute -z-10 w-[90%] -bottom-[50%]"></div>
+      </div>
+    </main>
+  );
+}
+
+{
+  /* <main className="container flex max-h-screen justify-between items-center">
       <div className="flex flex-col gap-[110px]">
         <div className="flex flex-col gap-7">
           <h1 className="text-5xl">
@@ -101,6 +178,5 @@ export default function SignIn() {
           </Link>
         </p>
       </div>
-    </main>
-  );
+    </main> */
 }
