@@ -1,5 +1,5 @@
 import Search from "@/components/Search";
-import PopularCity from "./PopularCity";
+import PopularCity from "./home/PopularCity";
 
 export default function Home() {
   return (
@@ -9,9 +9,7 @@ export default function Home() {
           <h1 className="bold text-white text-center">Mau kemana hari ini?</h1>
           <Search />
         </div>
-        {/* <div className="radialGradient w-auto h-full"> */}
           <PopularCity />
-        {/* </div> */}
       </div>
     </main>
   );

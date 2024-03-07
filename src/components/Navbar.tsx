@@ -1,5 +1,6 @@
 "use client";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -13,9 +14,14 @@ const Navbar = () => {
     !disableNavbar.includes(pathName) && (
       <nav className="flex items-center justify-between py-[60px]">
         <Link href={"/"} className="text-2xl text-purple">
-          Destinify
+          <Image
+            src={"/destinify-logo.png"}
+            width={145}
+            height={37}
+            alt="logo"
+          />
         </Link>
-        <div className="hidden lg:flex gap-4">
+        <div className="hidden lg:flex gap-4 items-center ml-6">
           <Link href={"/"} className="text-white">
             Beranda
           </Link>
