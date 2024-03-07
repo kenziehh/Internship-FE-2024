@@ -50,83 +50,136 @@ export default function SignUp() {
   };
 
   return (
-    <main className="container flex min-h-screen justify-between items-center">
-      <div className="flex flex-col gap-[110px]">
-        <div className="flex flex-col gap-7">
-          <h1 className="text-5xl">
-            Welcome to <span className="font-bold">Destinify!</span>
-          </h1>
-          <p className="max-w-[516px] text-2xl text-gray">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod!
-          </p>
-        </div>
-        <Image src={"/baseimg.jpg"} alt="" width={500} height={400} />
-      </div>
-      <div className="flex flex-col items-center gap-8">
-        <h1 className="text-4xl font-semibold">Daftar</h1>
-        <form className="flex flex-col items-center gap-2">
-          <Input
-            type="email"
-            name="email"
-            label="Email"
-            required
-            onChange={handleChange}
-            className="max-w-[500px]"
-          />
-          <Input
-            type="text"
-            name="name"
-            label="Nama Lengkap"
-            required
-            onChange={handleChange}
-            className="max-w-[500px]"
-          />
-          <Input
-            type="number"
-            name="telp"
-            label="Nomor Telepon"
-            required
-            onChange={handleChange}
-            className="max-w-[500px]"
-          />
-          <Input
-            type="password"
-            name="password"
-            label="Password"
-            required
-            onChange={handleChange}
-            className="max-w-[500px]"
-          />
-          <Input
-            type="password"
-            name="confirmpassword"
-            label="Confirm Password"
-            required
-            onChange={handleChange}
-            className="max-w-[500px]"
-          />
-          <div className="flex items-center">
-            <input type="checkbox" />
-            <p className="text-gray text-sm">
-              By registering. You agree to our
-              <span className="text-black"> Terms & Privacy Policy</span>
-            </p>
+    <main className="h-screen">
+      <div className="flex flex-col">
+        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-0 justify-between mt-[115px]">
+          <div className="flex flex-col gap-[120px]">
+            <div className="flex flex-col gap-7">
+              <h1 className="text-white text-center md:text-start">
+                Selamat datang di <span className="bold">Destinify</span>!
+              </h1>
+              <p className="text-neutral max-w-[510px] text-2xl text-center md:text-start">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod!
+              </p>
+            </div>
+            <Image src={"/baseimg.jpg"} alt="" width={500} height={400} />
           </div>
-          <button
-            className="py-2 px-3 border-2 mt-4 rounded-md bg-black self-stretch text-white"
-            onClick={onSubmit}
-          >
-            Daftar
-          </button>
-        </form>
-        <p className="text-center">
-          Sudah Punya Akun?
-          <Link href={"/signin"} className="text-blue-500">
-            {` Masuk`}
-          </Link>
-        </p>
+          <div className="flex flex-col items-stretch gap-16 shadow-xl rounded-xl ">
+            <div className="flex flex-col gap-5 text-center items-center px-8">
+              <h1 className="text-4xl font-semibold text-white">Daftar</h1>
+              <h3 className="text-2xl text-neutral">
+                Silahkan daftar terlebih dahulu
+              </h3>
+            </div>
+            <form className="flex flex-col items-center gap-2">
+              <Input
+                type="email"
+                name="email"
+                label="Email"
+                required
+                onChange={handleChange}
+                className="max-w-[500px]"
+              />
+              <Input
+                type="text"
+                name="name"
+                label="Nama Lengkap"
+                required
+                onChange={handleChange}
+                className="max-w-[500px]"
+              />
+              <Input
+                type="number"
+                name="telp"
+                label="Nomor Telepon"
+                required
+                onChange={handleChange}
+                className="max-w-[500px]"
+              />
+              <Input
+                type="password"
+                name="password"
+                label="Password"
+                required
+                onChange={handleChange}
+                className="max-w-[500px]"
+              />
+              <Input
+                type="password"
+                name="confirmpassword"
+                label="Confirm Password"
+                required
+                onChange={handleChange}
+                className="max-w-[500px]"
+              />
+              <div className="flex items-center py-2 mt-2 gap-4">
+                <input type="checkbox" />
+                <p className="text-neutral text-sm">
+                  By registering. You agree to our
+                  <span className="text-white medium"> Terms & Privacy Policy</span>
+                </p>
+              </div>
+              <button
+                className="py-2 px-3 border-2 mt-4 rounded-md bg-black self-stretch text-white"
+                onClick={onSubmit}
+              >
+                Daftar
+              </button>
+            </form>
+
+            <div className="flex flex-col gap-8 -mt-8">
+              <p className="text-neutral separatorBetween">or</p>
+
+              {/* <div>google</div> */}
+              <p className="text-center text-white">
+                Sudah punya akun?
+                <Link href={"/signin"} className="medium">
+                  {` Masuk`}
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="halfRadialGradient absolute -z-10 w-[90%] -bottom-[50%]"></div>
       </div>
     </main>
   );
+}
+{
+  /* <form className="flex flex-col items-stretch gap-5">
+              <div className="">
+                <p className="l2 text-neutral">Email</p>
+                <Input
+                  type="email"
+                  name="email"
+                  label="Masukkan Email"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <p className="l2 text-neutral">Password</p>
+                <Input
+                  type="password"
+                  name="password"
+                  label="Masukkan Password"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <Link
+                href={"/reset"}
+                className="underline text-neutral self-end l2"
+              >
+                Lupa kata sandi?
+              </Link>
+              <button
+                className="p-3 bg-purple text-white rounded-[40px]"
+                onClick={onSubmit}
+              >
+                Masuk
+              </button>
+            </form> */
 }
