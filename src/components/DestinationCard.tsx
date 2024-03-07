@@ -1,0 +1,40 @@
+import Image from "next/image";
+import React from "react";
+import Button from "./Button";
+
+const DestinationCard = ({
+  image,
+  name,
+  desc,
+}: {
+  image: string;
+  name: string;
+  desc: string;
+}) => {
+  return (
+    <div className="py-9 px-7 bg-black flex gap-[44px]">
+      <Image width={315} height={315} src={image} alt="" />
+      <div className="flex flex-col justify-between">
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center justify-between">
+            <h1 className="text-white bold">{name}</h1>
+            <Image src={"/icons/hearth.png"} width={40} height={35} alt="" />
+          </div>
+          <p className="text-neutral text-2xl">{desc}</p>
+        </div>
+        <div className="flex justify-between mt-4">
+          <div className="flex items-center">
+            <Image src={"/icons/star.png"} width={30} height={30} alt="" />
+            <Image src={"/icons/star.png"} width={30} height={30} alt="" />
+            <Image src={"/icons/star.png"} width={30} height={30} alt="" />
+            <Image src={"/icons/star.png"} width={30} height={30} alt="" />
+            <Image src={"/icons/star.png"} width={30} height={30} alt="" />
+          </div>
+          <Button>Selengkapnya</Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DestinationCard;
