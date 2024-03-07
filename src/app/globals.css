@@ -43,6 +43,7 @@
     rgba(135, 50, 244, 0.25) 35.05%,
     rgba(135, 50, 244, 0) 100%
   );
+  background-position: center;
 }
 .halfRadialGradient {
   height: 100vh;

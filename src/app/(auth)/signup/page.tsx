@@ -2,6 +2,7 @@
 import Input from "@/components/Input";
 import { UserAuthData } from "@/models/UserAuthData";
 import { useMutation } from "@tanstack/react-query";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
@@ -60,7 +61,7 @@ export default function SignUp() {
             eiusmod!
           </p>
         </div>
-        <img src="https://placekitten.com/g/516/400" alt="" className="" />
+        <Image src={"/baseimg.jpg"} alt="" width={500} height={400} />
       </div>
       <div className="flex flex-col items-center gap-8">
         <h1 className="text-4xl font-semibold">Daftar</h1>

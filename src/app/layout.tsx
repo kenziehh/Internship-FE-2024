@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactQueryProvider>
-        <body className={`${prompt.className} bg-darkest`}>
+        <body className={`${prompt.className} bg-darkest container`}>
           <NextAuthProvider>
             <Navbar />
             {children}

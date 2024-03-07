@@ -11,11 +11,11 @@ const Navbar = () => {
 
   return (
     !disableNavbar.includes(pathName) && (
-      <nav className="flex items-center justify-between container p-8">
+      <nav className="flex items-center justify-between py-[60px]">
         <Link href={"/"} className="text-2xl text-purple">
           Destinify
         </Link>
-        <div className="flex gap-4">
+        <div className="hidden lg:flex gap-4">
           <Link href={"/"} className="text-white">
             Beranda
           </Link>
@@ -29,16 +29,16 @@ const Navbar = () => {
         {status === "authenticated" ? (
           <button
             onClick={() => signOut()}
-            className="bg-primary text-white py-2 px-16 rounded-[40px]"
+            className="bg-primary text-white py-2 px-16 rounded-[40px] hidden md:block"
           >
-            Sign Out
+            Keluar
           </button>
         ) : (
           <button
             onClick={() => signIn()}
-            className="bg-primary text-white py-2 px-16 rounded-[40px]"
+            className="bg-primary text-white py-2 px-16 rounded-[40px] hidden md:block"
           >
-            Sign In
+            Masuk
           </button>
         )}
       </nav>

@@ -3,6 +3,7 @@ import Input from "@/components/Input";
 import { UserAuthData } from "@/models/UserAuthData";
 import { useMutation } from "@tanstack/react-query";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
@@ -57,7 +58,7 @@ export default function SignIn() {
   };
 
   return (
-    <main className="container h-screen">
+    <main className="h-screen">
       <div className="flex flex-col">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-0 justify-between mt-[115px]">
           <div className="flex flex-col gap-[120px]">
@@ -70,7 +71,7 @@ export default function SignIn() {
                 eiusmod!
               </p>
             </div>
-            <img src="/baseimg.jpg" alt="" className="w-full h-full" />
+            <Image src={"/baseimg.jpg"} alt="" width={500} height={400}/>
           </div>
           <div className="flex flex-col items-stretch gap-16 shadow-xl rounded-xl ">
             <div className="flex flex-col gap-5 text-center items-center px-8">
@@ -85,7 +86,7 @@ export default function SignIn() {
                 <Input
                   type="email"
                   name="email"
-                  label="email"
+                  label="Masukkan Email"
                   required
                   onChange={handleChange}
                 />
@@ -95,7 +96,7 @@ export default function SignIn() {
                 <Input
                   type="password"
                   name="password"
-                  label="password"
+                  label="Masukkan Password"
                   required
                   onChange={handleChange}
                 />
