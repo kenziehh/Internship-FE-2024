@@ -67,11 +67,11 @@ export default function SignIn() {
                 Selamat datang di <span className="bold">Destinify</span>!
               </h1>
               <p className="text-neutral max-w-[510px] text-2xl text-center md:text-start">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod!
+                Ayo jelajahi keindahan tersembunyi di setiap sudut destinasi
+                bersama kami!
               </p>
             </div>
-            <Image src={"/images/mascot.png"} alt="" width={570} height={570}/>
+            <Image src={"/images/mascot.png"} alt="" width={570} height={570} />
           </div>
           <div className="flex flex-col items-stretch gap-16 shadow-xl rounded-xl ">
             <div className="flex flex-col gap-5 text-center items-center px-8">

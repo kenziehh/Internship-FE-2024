@@ -54,11 +54,11 @@ const Navbar = () => {
             Masuk
           </button>
         )}
-        <AlignJustify
+        {/* <AlignJustify
           size={40}
           className="text-white lg:hidden"
           onClick={handleNavbar}
-        />
+        /> */}
         {/* {isOpen ? (
           <div className="absolute w-full flex flex-col ">
             <X
