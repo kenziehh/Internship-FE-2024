@@ -18,7 +18,7 @@ const CarouselImage = ({
         alt=""
         width={1000}
         height={350}
-        className="rounded-2xl w-full"
+        className="rounded-2xl w-full h-[20vh] md:h-full"
       />
       <div className="md:flex flex-col absolute bottom-2 left-2 md:bottom-10 md:left-10">
         <h1 className="bold text-white text-lg md:h1">{name}</h1>
@@ -26,7 +26,7 @@ const CarouselImage = ({
           {location}
         </h3>
       </div>
-      <div className="flex gap-5 absolute bottom-2 right-2 md:bottom-10 md:right-10">
+      <div className="hidden md:flex gap-5 absolute bottom-2 right-2 md:bottom-10 md:right-10">
         <ArrowButton direction="left" />
         <ArrowButton direction="right" />
       </div>

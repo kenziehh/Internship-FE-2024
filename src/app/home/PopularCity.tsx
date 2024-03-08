@@ -11,7 +11,7 @@ const PopularCity = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-40 justify-between radialGradient">
-        <Card image="/yogya.jpg" name="Yogyakarta" />
+        <Card image="/yogya.jpg" name="Yogyakarta"/>
         <Card image="/bali.jpg" name="Bali" />
         <Card image="/surabaya.jpg" name="Surabaya" />
         <Card image="/malang.jpg" name="Malang" />

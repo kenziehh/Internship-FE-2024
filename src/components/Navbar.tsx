@@ -1,10 +1,10 @@
 "use client";
-import { AlignJustify, X } from "lucide-react";
+// import { AlignJustify, X } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
   const pathName = usePathname();
