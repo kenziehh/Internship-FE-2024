@@ -44,7 +44,7 @@ export default function SignIn() {
         redirect: false,
         email: formData.email,
         password: formData.password,
-        callbackUrl: "/protected",
+        callbackUrl: "/",
       });
       if (!response?.error) {
         push("/protected");
