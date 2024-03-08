@@ -61,7 +61,7 @@ export default function SignIn() {
     <main className="h-screen">
       <div className="flex flex-col">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-0 justify-between mt-[115px]">
-          <div className="flex flex-col gap-[120px]">
+          <div className="flex flex-col items-center gap-20">
             <div className="flex flex-col gap-7">
               <h1 className="text-white text-center md:text-start">
                 Selamat datang di <span className="bold">Destinify</span>!
@@ -71,7 +71,7 @@ export default function SignIn() {
                 eiusmod!
               </p>
             </div>
-            <Image src={"/baseimg.jpg"} alt="" width={500} height={400}/>
+            <Image src={"/images/mascot.png"} alt="" width={570} height={570}/>
           </div>
           <div className="flex flex-col items-stretch gap-16 shadow-xl rounded-xl ">
             <div className="flex flex-col gap-5 text-center items-center px-8">

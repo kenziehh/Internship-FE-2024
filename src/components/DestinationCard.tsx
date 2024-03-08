@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "./Button";
+import Link from "next/link";
 
 const DestinationCard = ({
   image,
@@ -30,7 +31,9 @@ const DestinationCard = ({
             <Image src={"/icons/star.png"} width={30} height={30} alt="" />
             <Image src={"/icons/star.png"} width={30} height={30} alt="" />
           </div>
-          <Button>Selengkapnya</Button>
+          <Button>
+            <Link href={"/city/destination"}>Selengkapnya</Link>
+          </Button>
         </div>
       </div>
     </div>
