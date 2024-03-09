@@ -99,9 +99,21 @@ export default function Destination() {
           <div className="flex flex-col gap-9">
             <h4 className="text-neutral text-2xl">Lainnya :</h4>
             <div className="overflow-x-visible grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-center">
-              <CommentBubble />
-              <CommentBubble />
-              <CommentBubble />
+              <CommentBubble
+                name="Aira Dermieza"
+                date="06 Maret 2024"
+                comment="Emang udah gak perlu diraguin lagi yaa pemandangannya, saran buat kalian coba dateng pas sunrise dehh, indah bgt!!"
+              />
+              <CommentBubble
+                name="Steffi Amozarea"
+                date="09 Maret 2024"
+                comment="Gatau udah berapa kali kesini tapi selalu jatuh cintaa, apalagi jajanannya murah murah, top markotopp!!"
+              />
+              <CommentBubble
+                name="Naura Vizemieta"
+                date="01 Maret 2024"
+                comment="Banyak bulee disinii hahah hati hati tapi temenku baru aja kehilangan dompet , tapi pemandangan mah oke bgtt!!"
+              />
             </div>
           </div>
         </div>
