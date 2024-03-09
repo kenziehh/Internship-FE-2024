@@ -14,7 +14,7 @@ const DestinationCard = ({
 }) => {
   return (
     <div className="py-9 px-7 bg-black flex flex-col gap-8 lg:flex-row md:gap-[44px] items-center">
-      <Image width={315} height={315} src={image} alt="" className="w-72 h-72 md:w-full md:h-full"/>
+      <Image width={315} height={315} src={image} alt="" className=""/>
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-1">
           <div className="flex items-center justify-between">

@@ -1,17 +1,23 @@
 import CommentBubble from "@/components/CommentBubble";
 import Separator from "@/components/Separator";
 import ThumbCard from "@/components/ThumbCard";
+import CarouselContainer from "@/components/carousel/CarouselContainer";
 import CarouselImage from "@/components/carousel/CarouselImage";
+import { CarouselImageData } from "@/models/interface/CarouselImageData";
 import Image from "next/image";
 
 export default function Destination() {
+  const data: CarouselImageData = {
+    name: "Yogyakarta",
+    location: "Jawa Tengah, Indonesia",
+  };
+  const imageArray = [
+    "/images/carousel/carousel-borobudur.jpg",
+    "/images/carousel/carousel-yogya.jpg",
+  ];
   return (
     <main>
-      <CarouselImage
-        image="/carousel-borobudur.jpg"
-        name="Candi Borobudur"
-        location="Jawa Tengah, Indonesia"
-      />
+      <CarouselContainer images={imageArray} data={data} />
       <section className="flex flex-col gap-5 md:gap-11 mt-[72px]">
         <div className="flex flex-col gap-5">
           <h3 className="text-white bold text-2xl md:h1">Deskripsi</h3>

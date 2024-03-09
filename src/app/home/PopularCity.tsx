@@ -11,12 +11,12 @@ const PopularCity = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-40 justify-between radialGradient">
-        <Card image="/yogya.jpg" name="Yogyakarta"/>
-        <Card image="/bali.jpg" name="Bali" />
-        <Card image="/surabaya.jpg" name="Surabaya" />
-        <Card image="/malang.jpg" name="Malang" />
-        <Card image="/bandung.jpg" name="Bandung" />
-        <Card image="/bogor.jpg" name="Bogor" />
+        <Card image="/images/city/yogya.jpg" name="Yogyakarta"/>
+        <Card image="/images/city/bali.jpg" name="Bali" />
+        <Card image="/images/city/surabaya.jpg" name="Surabaya" />
+        <Card image="/images/city/malang.jpg" name="Malang" />
+        <Card image="/images/city/bandung.jpg" name="Bandung" />
+        <Card image="/images/city/bogor.jpg" name="Bogor" />
       </div>
     </section>
   );

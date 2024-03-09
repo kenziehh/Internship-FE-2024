@@ -1,14 +1,17 @@
 import DestinationCard from "@/components/DestinationCard";
-import CarouselImage from "@/components/carousel/CarouselImage";
+import CarouselContainer from "@/components/carousel/CarouselContainer";
+import { CarouselImageData } from "@/models/interface/CarouselImageData";
 
 export default function City() {
+  const data: CarouselImageData = {
+    name: "Yogyakarta",
+    location: "Jawa Tengah, Indonesia",
+  };
+  const imageArray = ["/images/carousel/carousel-borobudur.jpg", "/images/carousel/carousel-yogya.jpg"];
+
   return (
     <main className="flex flex-col ">
-      <CarouselImage
-        image="/carousel-yogya.jpg"
-        name="Yogyakarta"
-        location="Jawa Tengah, Indonesia"
-      />
+      <CarouselContainer images={imageArray} data={data} />
       <section className="flex flex-col gap-10 radialGradient mt-10">
         <DestinationCard
           image="/images/destination/borobudur.png"

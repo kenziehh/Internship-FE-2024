@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
 import "./globals.css";
-import ReactQueryProvider from "./ReactQueryProvider";
+import ReactQueryProvider from "../components/layouts/ReactQueryProvider";
 import Navbar from "@/components/Navbar";
-import NextAuthProvider from "./NextAuthProvider";
+import NextAuthProvider from "../components/layouts/NextAuthProvider";
 
 const prompt = Prompt({ weight: ["400", "500", "700"], subsets: ["latin"] });
 
