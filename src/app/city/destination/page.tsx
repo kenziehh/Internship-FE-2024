@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Modal from "@/components/BookingModal";
 import Button from "@/components/Button";
 import CommentBubble from "@/components/CommentBubble";
