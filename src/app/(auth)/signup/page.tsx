@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/Button";
 import Input from "@/components/Input";
 import { UserAuthData } from "@/models/UserAuthData";
 import { useMutation } from "@tanstack/react-query";
@@ -72,7 +73,7 @@ export default function SignUp() {
                 Masukkan inputan dengan benar
               </h3>
             </div>
-            <form className="flex flex-col items-center gap-2">
+            <form className="flex flex-col items-stretch gap-2">
               <Input
                 type="email"
                 name="email"
@@ -123,18 +124,17 @@ export default function SignUp() {
                   </span>
                 </p>
               </div>
-              <button
+              {/* <button
                 className="py-2 px-3 border-2 mt-4 rounded-md bg-black self-stretch text-white"
                 onClick={onSubmit}
               >
                 Daftar
-              </button>
+              </button> */}
+              <Button onClick={onSubmit}>Daftar</Button>
             </form>
 
             <div className="flex flex-col gap-8 -mt-8">
               <p className="text-neutral separatorBetween">or</p>
-
-              {/* <div>google</div> */}
               <p className="text-center text-white">
                 Sudah punya akun?
                 <Link href={"/signin"} className="medium">
@@ -149,40 +149,4 @@ export default function SignUp() {
       </div>
     </main>
   );
-}
-{
-  /* <form className="flex flex-col items-stretch gap-5">
-              <div className="">
-                <p className="l2 text-neutral">Email</p>
-                <Input
-                  type="email"
-                  name="email"
-                  label="Masukkan Email"
-                  required
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <p className="l2 text-neutral">Password</p>
-                <Input
-                  type="password"
-                  name="password"
-                  label="Masukkan Password"
-                  required
-                  onChange={handleChange}
-                />
-              </div>
-              <Link
-                href={"/reset"}
-                className="underline text-neutral self-end l2"
-              >
-                Lupa kata sandi?
-              </Link>
-              <button
-                className="p-3 bg-purple text-white rounded-[40px]"
-                onClick={onSubmit}
-              >
-                Masuk
-              </button>
-            </form> */
 }

@@ -1,10 +1,13 @@
+"use client"
+import Modal from "@/components/BookingModal";
+import Button from "@/components/Button";
 import CommentBubble from "@/components/CommentBubble";
 import Separator from "@/components/Separator";
 import ThumbCard from "@/components/ThumbCard";
 import CarouselContainer from "@/components/carousel/CarouselContainer";
-import CarouselImage from "@/components/carousel/CarouselImage";
 import { CarouselImageData } from "@/models/interface/CarouselImageData";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Destination() {
   const data: CarouselImageData = {
@@ -15,6 +18,10 @@ export default function Destination() {
     "/images/carousel/carousel-borobudur.jpg",
     "/images/carousel/carousel-yogya.jpg",
   ];
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const handleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <main>
       <CarouselContainer images={imageArray} data={data} />
@@ -117,7 +124,11 @@ export default function Destination() {
             </div>
           </div>
         </div>
+        <Button onClick={handleModal}>Beli Tiket</Button>
       </section>
+      {isModalOpen ? (
+        <Modal linkTo="/transaction" onClose={handleModal} />
+      ) : null}
     </main>
   );
 }

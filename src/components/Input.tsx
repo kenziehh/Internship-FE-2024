@@ -7,6 +7,7 @@ const Input = ({
   label,
   onChange,
   required = false,
+  colors,
 }: {
   type?: string;
   name?: string;
@@ -14,14 +15,22 @@ const Input = ({
   label?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
+  colors?: string;
 }) => {
+  const bgColor = () => {
+    if (colors === "dark") {
+      return "bg-darkest text-white";
+    } else {
+      return "bg-white text-black";
+    }
+  };
   return (
     <div className="relative z-0 w-full mt-3 group">
       <input
         type={type}
         name={name}
         id={name}
-        className={`block py-6 px-5 w-full rounded-lg text-lg text-black bg-white border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-1 focus:border-blue-600 peer ${className}`}
+        className={`block py-6 px-5 w-full rounded-lg text-lg ${bgColor()} border-[1px] border-gray-300 appearance-none focus:outline-none focus:ring-1 focus:border-blue-600 peer ${className}`}
         placeholder=""
         onChange={onChange}
         required={required}
