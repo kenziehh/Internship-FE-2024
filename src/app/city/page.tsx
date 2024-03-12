@@ -7,7 +7,10 @@ export default function City() {
     name: "Yogyakarta",
     location: "Jawa Tengah, Indonesia",
   };
-  const imageArray = ["/images/carousel/carousel-borobudur.jpg", "/images/carousel/carousel-yogya.jpg"];
+  const imageArray = [
+    "/images/carousel/carousel-borobudur.jpg",
+    "/images/carousel/carousel-yogya.jpg",
+  ];
 
   return (
     <main className="flex flex-col ">

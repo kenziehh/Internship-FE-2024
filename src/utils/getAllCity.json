@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "image": "/images/city/yogya.jpg",
+    "name": "Yogyakarta"
+  },
+  {
+    "id": "2",
+    "image": "/images/city/bali.jpg",
+    "name": "Bali"
+  },
+  {
+    "id": "3",
+    "image": "/images/city/surabaya.jpg",
+    "name": "Surabaya"
+  },
+  {
+    "id": "4",
+    "image": "/images/city/malang.jpg",
+    "name": "Malang"
+  },
+  {
+    "id": "5",
+    "image": "/images/city/bandung.jpg",
+    "name": "Bandung"
+  },
+  {
+    "id": "6",
+    "image": "/images/city/bogor.jpg",
+    "name": "Bogor"
+  }
+]

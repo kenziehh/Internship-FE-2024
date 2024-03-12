@@ -1,7 +1,19 @@
+"use client";
 import Card from "@/components/Card";
+import { City } from "@/models/interface/City";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import React from "react";
 
 const PopularCity = () => {
+  const { data } = useQuery<City[]>({
+    queryFn: async () => {
+      const response = await axios.get("/api/city");
+      return response.data.data;
+    },
+    queryKey: ["city"],
+  });
+  console.log(data);
   return (
     <section className="flex flex-col gap-12 pb-20">
       <div className="flex flex-col items-center gap-3">
@@ -11,12 +23,15 @@ const PopularCity = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-40 justify-between radialGradient">
-        <Card image="/images/city/yogya.jpg" name="Yogyakarta"/>
-        <Card image="/images/city/bali.jpg" name="Bali" />
-        <Card image="/images/city/surabaya.jpg" name="Surabaya" />
-        <Card image="/images/city/malang.jpg" name="Malang" />
-        <Card image="/images/city/bandung.jpg" name="Bandung" />
-        <Card image="/images/city/bogor.jpg" name="Bogor" />
+        {data?.map((cityItem: City) => {
+          return (
+            <Card
+              image={cityItem.image}
+              name={cityItem.name}
+              key={cityItem.id}
+            />
+          );
+        })}
       </div>
     </section>
   );
