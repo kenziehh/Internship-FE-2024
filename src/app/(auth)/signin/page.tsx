@@ -47,7 +47,7 @@ export default function SignIn() {
         callbackUrl: "/",
       });
       if (!response?.error) {
-        push("/protected");
+        push("/");
       } else {
         console.log(response.error);
       }
