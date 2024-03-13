@@ -71,7 +71,13 @@ export default function SignIn() {
                 bersama kami!
               </p>
             </div>
-            <Image src={"/images/mascot.png"} alt="" width={570} height={570} />
+            <Image
+              src={"/images/mascot.png"}
+              alt=""
+              width={400}
+              height={570}
+              className="max-w-auto max-h-auto"
+            />
           </div>
           <div className="flex flex-col items-stretch gap-16 shadow-xl rounded-xl ">
             <div className="flex flex-col gap-5 text-center items-center px-8">
@@ -116,8 +122,6 @@ export default function SignIn() {
             </form>
             <div className="flex flex-col gap-8 -mt-8">
               <p className="text-neutral separatorBetween">or</p>
-
-              {/* <div>google</div> */}
               <p className="text-center text-white">
                 Belum punya akun?
                 <Link href={"/signup"} className="medium">
