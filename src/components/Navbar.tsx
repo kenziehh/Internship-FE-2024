@@ -14,12 +14,16 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   const { status }: { status: string } = useSession();
-
+  const isActive = (path: string) => {
+    if (path === pathName) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return (
     !disableNavbar.includes(pathName) && (
-      <nav
-        className={`container flex items-center justify-between py-[60px]`}
-      >
+      <nav className={`container flex items-center justify-between py-[60px]`}>
         <Link href={"/"} className="text-2xl text-purple">
           <Image
             src={"/destinify-logo.png"}
@@ -28,14 +32,23 @@ const Navbar = () => {
             alt="logo"
           />
         </Link>
-        <div className="hidden lg:flex gap-4 items-center">
-          <Link href={"/"} className="text-white">
+        <div className="hidden lg:flex gap-4 items-center bold text-[22px]">
+          <Link
+            href={"/"}
+            className={`${isActive("/") ? "text-purple" : "text-white"}`}
+          >
             Beranda
           </Link>
-          <Link href={"/transaction"} className="text-white">
+          <Link
+            href={"/transaction"}
+            className={isActive("/transaction") ? "text-purple" : "text-white"}
+          >
             Transaksi
           </Link>
-          <Link href={"/profile"} className="text-white">
+          <Link
+            href={"/profile"}
+            className={isActive("/profile") ? "text-purple" : "text-white"}
+          >
             Profil
           </Link>
         </div>
