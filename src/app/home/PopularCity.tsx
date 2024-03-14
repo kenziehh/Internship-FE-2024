@@ -25,7 +25,6 @@ const PopularCity = () => {
         </p>
       </div>
       {isLoading ? (
-        // <div className="text-white text-6xl">Loading</div>
         <GridContainer className="radialGradient">
           <SkeletonCard />
           <SkeletonCard />
@@ -41,6 +40,7 @@ const PopularCity = () => {
               <Card
                 image={cityItem.image}
                 name={cityItem.name}
+                linkTo={cityItem.name}
                 key={cityItem.id}
               />
             );

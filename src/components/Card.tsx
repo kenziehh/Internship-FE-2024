@@ -2,11 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Card = ({ name, image }: { name: string; image: string }) => {
+const Card = ({
+  name,
+  image,
+  linkTo,
+}: {
+  name: string;
+  image: string;
+  linkTo?: string;
+}) => {
   return (
     <Link
       className="bg-transparent relative flex flex-col items-center cursor-pointer rounded-t-md"
-      href={"/city"}
+      href={linkTo ?? ""}
     >
       <Image
         src={image}
