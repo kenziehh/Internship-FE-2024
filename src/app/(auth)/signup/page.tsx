@@ -54,7 +54,7 @@ export default function SignUp() {
     <main className="h-screen">
       <div className="flex flex-col">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-0 justify-between mt-[115px]">
-          <div className="flex flex-col items-center gap-20">
+          <div className="flex flex-col items-start gap-20">
             <div className="flex flex-col gap-7">
               <h1 className="text-white text-center md:text-start">
                 Selamat datang di <span className="bold">Destinify</span>!
@@ -64,7 +64,13 @@ export default function SignUp() {
                 bersama kami!
               </p>
             </div>
-            <Image src={"/images/mascot.png"} alt="" width={400} height={570} className="max-w-auto max-h-auto"/>
+            <Image
+              src={"/images/mascot.png"}
+              alt=""
+              width={500}
+              height={570}
+              className="max-w-auto max-h-auto self-center"
+            />
           </div>
           <div className="flex flex-col items-stretch gap-16 shadow-xl rounded-xl ">
             <div className="flex flex-col gap-5 text-center items-center px-8">
@@ -124,12 +130,6 @@ export default function SignUp() {
                   </span>
                 </p>
               </div>
-              {/* <button
-                className="py-2 px-3 border-2 mt-4 rounded-md bg-black self-stretch text-white"
-                onClick={onSubmit}
-              >
-                Daftar
-              </button> */}
               <Button onClick={onSubmit}>Daftar</Button>
             </form>
 
@@ -144,8 +144,7 @@ export default function SignUp() {
             </div>
           </div>
         </div>
-
-        <div className="halfRadialGradient absolute -z-10 w-[90%] -bottom-[50%]"></div>
+        <div className="halfRadialGradient absolute -z-10 w-[70%] -bottom-[40%]"></div>
       </div>
     </main>
   );

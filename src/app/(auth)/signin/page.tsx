@@ -58,7 +58,7 @@ export default function SignIn() {
   };
 
   return (
-    <main className="h-screen">
+    <main className="">
       <div className="flex flex-col">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 xl:gap-0 justify-between mt-[115px]">
           <div className="flex flex-col items-center gap-20">
@@ -74,9 +74,9 @@ export default function SignIn() {
             <Image
               src={"/images/mascot.png"}
               alt=""
-              width={400}
+              width={500}
               height={570}
-              className="max-w-auto max-h-auto"
+              className="max-w-auto max-h-auto self-center"
             />
           </div>
           <div className="flex flex-col items-stretch gap-16 shadow-xl rounded-xl ">
@@ -132,7 +132,7 @@ export default function SignIn() {
           </div>
         </div>
 
-        <div className="halfRadialGradient absolute -z-10 w-[90%] -bottom-[50%]"></div>
+        <div className="halfRadialGradient absolute -z-10 w-[70%] -bottom-[40%]"></div>
       </div>
     </main>
   );
