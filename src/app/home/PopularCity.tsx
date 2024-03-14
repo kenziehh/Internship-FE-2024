@@ -10,7 +10,7 @@ import React from "react";
 const PopularCity = () => {
   const { data, isLoading } = useQuery<City[]>({
     queryFn: async () => {
-      const response = await axios.get("/api/city");
+      const response = await axios.get("/api/all/city");
       return response.data.data;
     },
     queryKey: ["city"],

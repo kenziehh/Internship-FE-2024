@@ -9,13 +9,13 @@ import React from "react";
 const CityItemList = () => {
   const { data } = useQuery<Destination[]>({
     queryFn: async () => {
-      const response = await axios.get("/api/city/destination");
+      const response = await axios.get(`/api/${params.city}`);
       return response.data.data;
     },
     queryKey: ["cityItem"],
   });
   const params = useParams<{ city: string }>();
-  console.log(params);
+  console.log(params.city);
 
   return (
     <section className="flex flex-col gap-10 radialGradient mt-10">
@@ -26,6 +26,7 @@ const CityItemList = () => {
             name={destinationItem?.name}
             desc={destinationItem?.desc}
             image={destinationItem?.image}
+            linkTo={`/${params.city}/${destinationItem?.id}`}
           />
         );
       })}

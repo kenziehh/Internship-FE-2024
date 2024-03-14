@@ -1,13 +1,14 @@
 "use client";
 import Modal from "@/components/booking/BookingModal";
-import Button from "@/components/Button";
 import CommentBubble from "@/components/CommentBubble";
 import Separator from "@/components/Separator";
 import ThumbCard from "@/components/ThumbCard";
 import CarouselContainer from "@/components/carousel/CarouselContainer";
 import { CarouselImageData } from "@/models/interface/CarouselImageData";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useState } from "react";
+import Button from "@/components/Button";
 
 export default function Destination() {
   const data: CarouselImageData = {
@@ -22,9 +23,19 @@ export default function Destination() {
   const handleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+  const params = useParams<{ city: string; destinationId: string }>();
+  console.log(params)
   return (
     <main>
-      <CarouselContainer images={imageArray} data={data} />
+      <div className="relative flex flex-col items-stretch">
+        <CarouselContainer images={imageArray} data={data} />
+        <Button
+          onClick={handleModal}
+          className="absolute -bottom-3.5 self-center"
+        >
+          Beli Tiket
+        </Button>
+      </div>
       <section className="flex flex-col gap-5 md:gap-11 mt-[72px]">
         <div className="flex flex-col gap-5">
           <h3 className="text-white bold text-2xl md:h1">Deskripsi</h3>
@@ -124,11 +135,8 @@ export default function Destination() {
             </div>
           </div>
         </div>
-        <Button onClick={handleModal}>Beli Tiket</Button>
       </section>
-      {isModalOpen ? (
-        <Modal linkTo="/transaction" onClose={handleModal} />
-      ) : null}
+      {isModalOpen ? <Modal linkTo={`/${params.city}/${params.destinationId}/checkout`} onClose={handleModal} /> : null}
     </main>
   );
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "image": "/images/tourguide.png",
+    "name": "Revalina Putri",
+    "age": 32
+  },
+  {
+    "id": "2",
+    "image": "/images/tourguide.png",
+    "name": "Aurora Regina",
+    "age": 32
+  },
+  {
+    "id": "3",
+    "image": "/images/tourguide.png",
+    "name": "Aurora Regina",
+    "age": 32
+  },
+  {
+    "id": "4",
+    "image": "/images/tourguide.png",
+    "name": "Aurora Regin",
+    "age": 32
+  },
+  {
+    "id": "5",
+    "image": "/images/tourguide.png",
+    "name": "Aurelia Regin",
+    "age": 32
+  },
+  {
+    "id": "6",
+    "image": "/images/tourguide.png",
+    "name": "Regina Aurelia",
+    "age": 32
+  }
+]

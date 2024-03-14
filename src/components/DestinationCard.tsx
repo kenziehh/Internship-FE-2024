@@ -7,14 +7,16 @@ const DestinationCard = ({
   image,
   name,
   desc,
+  linkTo,
 }: {
   image: string;
   name: string;
   desc: string;
+  linkTo?: string;
 }) => {
   return (
     <div className="py-9 px-7 bg-black flex flex-col gap-8 lg:flex-row md:gap-[44px] items-center">
-      <Image width={315} height={315} src={image} alt="" className=""/>
+      <Image width={315} height={315} src={image} alt="" className="" />
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-1">
           <div className="flex items-center justify-between">
@@ -32,7 +34,7 @@ const DestinationCard = ({
             <Image src={"/icons/star.png"} width={30} height={30} alt="" />
           </div>
           <Button>
-            <Link href={"/city/destination"}>Selengkapnya</Link>
+            <Link href={linkTo ?? ""}>Selengkapnya</Link>
           </Button>
         </div>
       </div>
