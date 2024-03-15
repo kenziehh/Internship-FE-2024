@@ -1,0 +1,33 @@
+{
+  "id": "1",
+  "name": "Revaline Putri",
+  "desc": "Seorang tour guide asli Jogja dengan pengalaman lebih dari 7 tahun. Telah memandu wisatawan melalui keindahan kota ini dan menciptakan pengalaman perjalanan tak terlupakan.",
+  "address": "Jalan Sosio Humaniora No 1, Caturtunggal, D.I.Y Yogyakarta",
+  "phoneNumber": "08123456789",
+  "city": "Yogyakarta",
+  "country": "Indonesia",
+  "rating": "4.9",
+  "review": {
+    "total": 52,
+    "reviews": [
+      {
+        "name": "Zaneeta",
+        "rating": 5,
+        "date": "21 September 2023",
+        "comment": "Abis jalan-jalan bareng Reva, bener-bener seru banget!  Reva enggak cuma pinter ngajak, tapi juga asik banget diajak ngobrol. Pokoknya, jalan-jalan jadi memorable berkat Reva yang ramah dan paham banget tentang Jogja!"
+      },
+      {
+        "name": "Zaneeta",
+        "rating": 5,
+        "date": "21 September 2023",
+        "comment": "Abis jalan-jalan bareng Reva, bener-bener seru banget!  Reva enggak cuma pinter ngajak, tapi juga asik banget diajak ngobrol. Pokoknya, jalan-jalan jadi memorable berkat Reva yang ramah dan paham banget tentang Jogja!"
+      },
+      {
+        "name": "Zaneeta",
+        "rating": 5,
+        "date": "21 September 2023",
+        "comment": "Abis jalan-jalan bareng Reva, bener-bener seru banget!  Reva enggak cuma pinter ngajak, tapi juga asik banget diajak ngobrol. Pokoknya, jalan-jalan jadi memorable berkat Reva yang ramah dan paham banget tentang Jogja!"
+      }
+    ]
+  }
+}

@@ -20,7 +20,9 @@ export default function Guide() {
   const params = useParams<{ city: string; destination: string }>();
   return (
     <main className="radialGradient flex flex-col gap-16">
-      <h1 className="text-xl bold md:text-[36px] text-white py-3 px-2 bg-purple self-start">Booking Tour Guide</h1>
+      <h1 className="text-xl bold md:text-[36px] text-white py-3 px-2 bg-purple self-start">
+        Booking Tour Guide
+      </h1>
       {isLoading ? (
         <GridContainer className="radialGradient">
           <SkeletonCard />
@@ -37,7 +39,7 @@ export default function Guide() {
               <Card
                 image={guideItem.image}
                 name={guideItem.name}
-                linkTo={guideItem.id}
+                linkTo={`guide/${guideItem.id}`}
                 key={guideItem.id}
               />
             );
