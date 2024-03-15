@@ -24,7 +24,7 @@ export default function Destination() {
     setIsModalOpen(!isModalOpen);
   };
   const params = useParams<{ city: string; destinationId: string }>();
-  console.log(params)
+  console.log(params);
   return (
     <main>
       <div className="relative flex flex-col items-stretch">
@@ -136,7 +136,13 @@ export default function Destination() {
           </div>
         </div>
       </section>
-      {isModalOpen ? <Modal linkTo={`/${params.city}/${params.destinationId}/checkout`} onClose={handleModal} /> : null}
+      {isModalOpen ? (
+        <Modal
+          linkTo={`/${params.city}/${params.destinationId}/checkout`}
+          onClose={handleModal}
+          bookingGuide={`/${params.city}/${params.destinationId}/guide`}
+        />
+      ) : null}
     </main>
   );
 }

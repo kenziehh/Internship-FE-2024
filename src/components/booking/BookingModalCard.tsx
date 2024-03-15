@@ -1,21 +1,17 @@
 import { Calendar, CrossIcon } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { forwardRef } from "react";
 import Button from "../Button";
 
-const BookingModalCard = ({
-  linkTo,
-  ref,
-  title,
-  onClick,
-  bookingLink,
-}: {
-  title?: string;
-  linkTo?: string;
-  ref?: React.LegacyRef<HTMLDivElement>;
-  onClick?: () => void;
-  bookingLink?: string;
-}) => {
+const BookingModalCard = forwardRef<
+  HTMLDivElement,
+  {
+    title?: string;
+    linkTo?: string;
+    onClick?: () => void;
+    bookingLink?: string;
+  }
+>(({ title, linkTo, onClick, bookingLink }, ref) => {
   return (
     <div
       className="bg-black px-12 py-11 rounded-[30px] md:w-[1220px] xl:w-full flex flex-col items-stretch border-2 border-neutral w-full gap-6"
@@ -55,6 +51,6 @@ const BookingModalCard = ({
       </Button>
     </div>
   );
-};
+});
 
 export default BookingModalCard;
