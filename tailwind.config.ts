@@ -23,7 +23,7 @@ const config: Config = {
         purple: "#8732F4",
         softPurple: "#F0E4FF",
         darkest: "#101010",
-        darkPurple: "#0BB1CB",
+        darkPurple: "#2A1C40",
         neutral: "#929292",
         baseBlack: "#252525",
         primary: "#8732F4",

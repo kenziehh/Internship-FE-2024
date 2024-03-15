@@ -1,12 +1,17 @@
 {
   "id": "1",
   "name": "Revaline Putri",
+  "image": "/images/tourguide.png",
   "desc": "Seorang tour guide asli Jogja dengan pengalaman lebih dari 7 tahun. Telah memandu wisatawan melalui keindahan kota ini dan menciptakan pengalaman perjalanan tak terlupakan.",
   "address": "Jalan Sosio Humaniora No 1, Caturtunggal, D.I.Y Yogyakarta",
   "phoneNumber": "08123456789",
-  "city": "Yogyakarta",
-  "country": "Indonesia",
+  "location": {
+    "city": "Yogyakarta",
+    "country": "Indonesia"
+  },
   "rating": "4.9",
+  "lastActive":"Aktif hari ini",
+  "responseTimeRate":"Merespon dalam 20 menit",
   "review": {
     "total": 52,
     "reviews": [
