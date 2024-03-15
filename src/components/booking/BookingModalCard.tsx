@@ -52,5 +52,6 @@ const BookingModalCard = forwardRef<
     </div>
   );
 });
+BookingModalCard.displayName = "BookingModalCard";
 
 export default BookingModalCard;
