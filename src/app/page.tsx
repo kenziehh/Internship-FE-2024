@@ -1,5 +1,5 @@
 import Search from "@/components/Search";
-import PopularCity from "./home/PopularCity";
+import PopularCity from "./(pages)/home/PopularCity";
 
 export default function Home() {
   return (
