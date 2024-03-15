@@ -25,7 +25,7 @@ export default function GuideDetail() {
   });
   return (
     <main className="flex flex-col md:flex-row">
-      <section className="flex flex-col gap-[120px] bg-darkPurple px-24 py-[72px]">
+      <section className="flex flex-col gap-10 md:gap-[120px] bg-darkPurple px-8 md:px-24 py-[72px]">
         <div className="text-white flex gap-5">
           <Link href={`/${params.city}/${params.destination}/guide`}>
             Tour Guide
@@ -42,7 +42,7 @@ export default function GuideDetail() {
             className="rounded-full"
           />
           <div className="flex flex-col gap-4">
-            <h3 className="text-2xl bold text-white">
+            <h3 className="text-lg lg:text-2xl bold text-white">
               {data?.name ?? "Tour Guide"}
             </h3>
             <h4 className="text-xl text-neutral">Tour Guide</h4>
@@ -89,18 +89,18 @@ export default function GuideDetail() {
           </div>
         </div>
       </section>
-      <section className="radialGradient px-20 py-24 text-white">
+      <section className="radialGradient px-8 py-10 md:px-20 md:py-24 text-white">
         <div className="flex flex-col gap-11 items-start">
           <div className="flex flex-col gap-4">
-            <h3 className="bold text-2xl">Tentang</h3>
-            <p className="text-2xl">{data?.desc ?? ""}</p>
+            <h3 className="bold text-lg lg:text-2xl">Tentang</h3>
+            <p className="text-lg lg:text-2xl">{data?.desc ?? ""}</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h3 className="bold text-2xl">Alamat</h3>
-            <p className="text-2xl">{data?.address ?? "-"}</p>
+            <h3 className="bold text-lg lg:text-2xl">Alamat</h3>
+            <p className="text-lg lg:text-2xl">{data?.address ?? "-"}</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h3 className="bold text-2xl">Kontak</h3>
+            <h3 className="bold text-lg lg:text-2xl">Kontak</h3>
             <span className="bg-darkPurple py-2 px-8 rounded-[55px]">
               {data?.phoneNumber ?? "-"}
             </span>
@@ -110,7 +110,7 @@ export default function GuideDetail() {
           <Separator />
         </section>
         <div className="flex flex-col gap-6">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col gap-4 lg:gap-0 lg:flex-row justify-between items-start lg:items-center">
             <div className="flex items-center gap-5">
               <Image
                 src={data?.image ?? ""}
@@ -157,7 +157,9 @@ export default function GuideDetail() {
             </div>
             <p>{data?.review.reviews[0].date}</p>
           </div>
-          <p className="text-2xl">{data?.review.reviews[0].comment}</p>
+          <p className="text-lg lg:text-2xl">
+            {data?.review.reviews[0].comment}
+          </p>
         </div>
       </section>
     </main>
