@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/Button";
 import Separator from "@/components/Separator";
 import { TourGuide } from "@/models/interface/TourGuide";
 import { useQuery } from "@tanstack/react-query";
@@ -161,6 +162,9 @@ export default function GuideDetail() {
             {data?.review.reviews[0].comment}
           </p>
         </div>
+        <Link href={`${data?.id}/checkout`} className="flex justify-center mt-8">
+          <Button>Booking Tour Guide</Button>
+        </Link>
       </section>
     </main>
   );

@@ -1,7 +1,6 @@
 "use client";
 import Separator from "@/components/Separator";
 import Ticket from "@/components/Ticket";
-import BookingModalCard from "@/components/booking/BookingModalCard";
 import { TransactionSection } from "@/models/types/TransactionSection";
 import { useState } from "react";
 
@@ -15,7 +14,7 @@ export default function Transaction() {
 
   return (
     <main>
-      <section className="flex flex-col gap-16">
+      <section className="flex flex-col gap-6 md:gap-16">
         <div className="flex flex-col gap-6 items-start">
           <h1 className="text-[42px] text-white">Transaksi</h1>
           <Separator />
@@ -43,9 +42,8 @@ export default function Transaction() {
           </button>
         </div>
       </section>
-      <section className="mt-16">
+      <section className="py-8 md:py-16">
         {selectedSection === "booking" ? (
-          // <BookingModalCard title="Tiket Anda" />
           <Ticket
             title="Tiket Anda"
             destination="Candi Borobudur"
@@ -53,7 +51,7 @@ export default function Transaction() {
             tourGuide="1"
           />
         ) : (
-          <div className="text-4xl text-white flex justify-center items-center">
+          <div className="text-4xl text-center text-white flex justify-center items-center">
             Belum Ada Riwayat Pesanan
           </div>
         )}

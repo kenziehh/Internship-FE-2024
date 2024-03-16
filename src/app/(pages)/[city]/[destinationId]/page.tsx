@@ -6,7 +6,7 @@ import ThumbCard from "@/components/ThumbCard";
 import CarouselContainer from "@/components/carousel/CarouselContainer";
 import { CarouselImageData } from "@/models/interface/CarouselImageData";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import Button from "@/components/Button";
 
@@ -25,6 +25,10 @@ export default function Destination() {
   };
   const params = useParams<{ city: string; destinationId: string }>();
   console.log(params);
+  const router = useRouter();
+  const onClick = () => {
+    router.push(`/${params.city}/${params.destinationId}/checkout`);
+  };
   return (
     <main>
       <div className="relative flex flex-col items-stretch">

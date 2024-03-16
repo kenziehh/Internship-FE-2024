@@ -1,4 +1,4 @@
-import { Calendar, CrossIcon } from "lucide-react";
+import { Calendar, Check, CrossIcon } from "lucide-react";
 import Link from "next/link";
 import React, { forwardRef } from "react";
 import Button from "../Button";
@@ -10,8 +10,9 @@ const BookingModalCard = forwardRef<
     linkTo?: string;
     onClick?: () => void;
     bookingLink?: string;
+    isGuided?: boolean;
   }
->(({ title, linkTo, onClick, bookingLink }, ref) => {
+>(({ title, linkTo, onClick, bookingLink, isGuided = false }, ref) => {
   return (
     <div
       className="bg-black px-12 py-11 rounded-[30px] md:w-[1220px] xl:w-full flex flex-col items-stretch border-2 border-neutral w-full gap-6"
@@ -35,19 +36,29 @@ const BookingModalCard = forwardRef<
       </div>
       <div>
         <div className="text-purple flex justify-between items-center py-8 flex-col md:flex-row gap-4 md:gap-0">
-          <Link className="flex items-center gap-2" href={bookingLink ?? ""}>
-            <div className="p-2 rounded-full border-purple border-2">
-              <CrossIcon size={20} />
+          {isGuided ? (
+            <div className="flex items-center gap-2">
+              <div className="p-2 rounded-full border-purple border-2">
+                <Check size={20} className="text-white" />
+              </div>
+              <h3 className="text-white">Booking Tour Guide</h3>
             </div>
-            <h3 className="text-white">Booking Tour Guide</h3>
-          </Link>
+          ) : (
+            <Link className="flex items-center gap-2" href={bookingLink ?? ""}>
+              <div className="p-2 rounded-full border-purple border-2">
+                <CrossIcon size={20} />
+              </div>
+              <h3 className="text-white">Booking Tour Guide</h3>
+            </Link>
+          )}
+
           <Link href={linkTo ?? ""} className="underline">
             Baca Selengkapnya
           </Link>
         </div>
       </div>
       <Button className="justify-center self-center" onClick={onClick}>
-        <Link href={linkTo ?? ""}>Beli Tiket</Link>
+        Beli Tiket
       </Button>
     </div>
   );
