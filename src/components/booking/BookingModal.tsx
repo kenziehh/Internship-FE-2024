@@ -6,10 +6,12 @@ const Modal = ({
   onClose,
   linkTo,
   bookingGuide,
+  onClick,
 }: {
   onClose?: () => void;
   linkTo?: string;
   bookingGuide: string;
+  onClick?: () => void;
 }) => {
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -21,6 +23,7 @@ const Modal = ({
         ref={modalRef}
         linkTo={linkTo}
         bookingLink={bookingGuide}
+        onClick={onClick}
       />
     </div>
   );

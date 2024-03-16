@@ -144,6 +144,7 @@ export default function Destination() {
         <Modal
           linkTo={`/${params.city}/${params.destinationId}/checkout`}
           onClose={handleModal}
+          onClick={onClick}
           bookingGuide={`/${params.city}/${params.destinationId}/guide`}
         />
       ) : null}
