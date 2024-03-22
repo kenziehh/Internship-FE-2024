@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import { UserAuthData } from "@/models/UserAuthData";
+import { User } from "@/models/interface/user/User";
 import { useMutation } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,9 +9,12 @@ import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
 export default function SignUp() {
-  const [formData, setFormData] = useState<UserAuthData>({
+  const [formData, setFormData] = useState<User>({
     email: "",
     password: "",
+    confirm_password: "",
+    name: "",
+    hp: "",
   });
   const { push } = useRouter();
   const { mutateAsync } = useMutation({
@@ -19,8 +22,11 @@ export default function SignUp() {
       fetch("/api/signup", {
         method: "POST",
         body: JSON.stringify({
+          hp: formData.hp,
+          name: formData.name,
           email: formData.email,
           password: formData.password,
+          confirm_password: formData.confirm_password,
         }),
       });
     },
@@ -35,14 +41,15 @@ export default function SignUp() {
       name === "email" ||
       name === "password" ||
       name === "name" ||
-      name === "telp" ||
-      name === "check"
+      name === "hp" ||
+      name === "confirm_password"
     ) {
       setFormData({
         ...formData,
         [name]: value,
       });
     }
+    console.log(formData);
   };
 
   const onSubmit = (e: any) => {
@@ -97,8 +104,8 @@ export default function SignUp() {
                 className="max-w-[500px]"
               />
               <Input
-                type="number"
-                name="telp"
+                type="text"
+                name="hp"
                 label="Nomor Telepon"
                 required
                 onChange={handleChange}
@@ -114,7 +121,7 @@ export default function SignUp() {
               />
               <Input
                 type="password"
-                name="confirmpassword"
+                name="confirm_password"
                 label="Confirm Password"
                 required
                 onChange={handleChange}
@@ -134,7 +141,7 @@ export default function SignUp() {
             </form>
 
             <div className="flex flex-col gap-8 -mt-8">
-              <p className="text-neutral separatorBetween">or</p>
+              <p className="text-neutral separatorBetween">atau</p>
               <p className="text-center text-white">
                 Sudah punya akun?
                 <Link href={"/signin"} className="medium">

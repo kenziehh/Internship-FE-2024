@@ -9,7 +9,7 @@ const GridContainer = ({
 }) => {
   return (
     <div
-      className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-40 justify-between ${className}`}
+      className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 md:gap-20 xl:gap-40 justify-between ${className}`}
     >
       {children}
     </div>

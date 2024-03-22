@@ -1,4 +1,5 @@
 "use client";
+import History from "@/components/History";
 import Separator from "@/components/Separator";
 import Ticket from "@/components/Ticket";
 import { TransactionSection } from "@/models/types/TransactionSection";
@@ -51,9 +52,21 @@ export default function Transaction() {
             tourGuide="1"
           />
         ) : (
-          <div className="text-4xl text-center text-white flex justify-center items-center">
-            Belum Ada Riwayat Pesanan
-          </div>
+          // <div className="text-4xl text-center text-white flex justify-center items-center">
+          //   Belum Ada Riwayat Pesanan
+          // </div>
+          <section className="flex flex-col gap-[26px]">
+            <History
+              image={"/images/destination/borobudur.png"}
+              location="Jawa Tengah, Indonesia"
+              name="Candi Borobudur"
+            />
+            <History
+              image={"/images/destination/borobudur.png"}
+              location="Jawa Tengah, Indonesia"
+              name="Candi Borobudur"
+            />
+          </section>
         )}
       </section>
     </main>

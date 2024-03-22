@@ -36,7 +36,7 @@ const Ticket = ({
       <div>
         <div className="text-purple flex justify-between items-center py-4 md:py-8 flex-col md:flex-row gap-4 md:gap-0">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-full border-purple border-2">
+            <div className="p-2 rounded-full bg-purple">
               <Check size={20} className="text-white"/>
             </div>
             <h3 className="text-white">Booking Tour Guide</h3>

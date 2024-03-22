@@ -21,9 +21,9 @@ const Card = ({
         alt="city"
         width={325}
         height={325}
-        className="rounded-t-xl w-72 h-72 md:w-full md:h-full"
+        className="rounded-t-xl w-full h-full"
       />
-      <div className="bg-white w-32 h-10 md:w-[200px] md:h-[60px] flex justify-center items-center absolute -bottom-6">
+      <div className="bg-white w-32 h-10 xl:w-[200px] xl:h-[60px] flex justify-center items-center absolute -bottom-6">
         <h4 className="bold">{name}</h4>
       </div>
     </Link>
